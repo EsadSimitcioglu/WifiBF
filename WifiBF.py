@@ -1,6 +1,5 @@
 #!/usr/bin/env python 3.7
 # -*- coding: utf-8 -*-
-import threading
 import argparse
 import os
 import os.path
@@ -30,9 +29,9 @@ try:
     ifaces.scan() 
     results = ifaces.scan_results()
 
-
     wifi = pywifi.PyWiFi()
     iface = wifi.interfaces()[0]
+
 except:
     print("[-] Error system")
 
@@ -71,25 +70,8 @@ def pwd(ssid, file):
             number += 1
             line = line.split("\n")
             pwd = line[0]
-
-            #thread = threading.Thread(target=main, args=(ssid,pwd,number))
-            #thread.daemon = True                            # Daemonize thread
-            #thread.start()                                  # Start the execution
-            #thread.join()
-
-
-
-            #thread = ThreadingExample(ssid,pwd,number)
-
-
-            #t1 = threading.Thread(target=main, args=(ssid,pwd,number))
             main(ssid, pwd, number)
-            #t1.start()
-            #t1.join()
-            
-       
-                    
-
+  
 
 def menu():
     parser = argparse.ArgumentParser(description='argparse Example')
