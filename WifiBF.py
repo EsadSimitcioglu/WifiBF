@@ -72,9 +72,9 @@ def pwd(ssid, file):
             line = line.split("\n")
             pwd = line[0]
 
-            thread = threading.Thread(target=main, args=(ssid,pwd,number))
+            #thread = threading.Thread(target=main, args=(ssid,pwd,number))
             #thread.daemon = True                            # Daemonize thread
-            thread.start()                                  # Start the execution
+            #thread.start()                                  # Start the execution
             #thread.join()
 
 
@@ -83,7 +83,7 @@ def pwd(ssid, file):
 
 
             #t1 = threading.Thread(target=main, args=(ssid,pwd,number))
-            #main(ssid, pwd, number)
+            main(ssid, pwd, number)
             #t1.start()
             #t1.join()
             
