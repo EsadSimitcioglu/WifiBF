@@ -73,11 +73,12 @@ def main(ssid, password, number):
 
 def pwd(ssid, file):
     number = 0
-    with open(file) as f:
+    with open(file, 'r', encoding='utf8') as f:
         lines = f.readlines()
-        random_number = random.randint(1,1000000)
-        number += 1
-        main(ssid, lines[random_number], number)
+        for x in range(len(lines)):
+            random_number = random.randint(1,len(lines))
+            number += 1
+            main(ssid, lines[random_number], number)
 
                     
 
