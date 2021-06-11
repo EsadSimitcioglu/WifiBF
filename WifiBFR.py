@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import random
 import sys
 import os
 import os.path
@@ -72,12 +73,12 @@ def main(ssid, password, number):
 
 def pwd(ssid, file):
     number = 0
-    with open(file, 'r', encoding='utf8') as words:
-        for line in words:
-            number += 1
-            line = line.split("\n")
-            pwd = line[0]
-            main(ssid, pwd, number)
+    with open(file) as f:
+        lines = f.readlines()
+        random_number = random.randint(1,1000000)
+        number += 1
+        main(ssid, lines[random_number], number)
+
                     
 
 
